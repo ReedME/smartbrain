@@ -1,20 +1,17 @@
 import React from 'react';
+import './FaceRecognition.css'
 
-const FaceRecognition = ({ imageUrl }) => {
-var defaultImage;
-if(imageUrl === '') {
-  defaultImage = '';
-} else {
-  defaultImage = <div className='absolute'>
-    <img className='pa3' alt='face detection' src={imageUrl} width='500px' height='auto' />
-  </div>;
-};
+const FaceRecognition = ({ imageUrl, box }) => {
+
 
   return (
     <div className='center'>
-      {defaultImage}
+      <div className='absolute'>
+        <img id='inputImage' className='pa3' alt='face detection' src={imageUrl} width='500px' height='auto' />
+        <div className='bounding-box' style={{top: box.topRow, right: box.rightCol, bottom: box.bottomRow, left: box.leftCol}}></div>
+      </div>
     </div>
-  )
-}
+      )
+      }
 
-export default FaceRecognition
+      export default FaceRecognition
